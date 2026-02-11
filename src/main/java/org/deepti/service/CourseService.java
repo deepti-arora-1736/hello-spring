@@ -1,6 +1,7 @@
 package org.deepti.service;
 
 import org.deepti.model.Course;
+import org.deepti.repository.CourseRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,17 +9,15 @@ import java.util.Optional;
 
 public class CourseService implements CrudService<Course> {
 
-    private List<Course> listOfCourses;
+    private CourseRepository courseRepository;
 
-    public CourseService(){
-        listOfCourses=new ArrayList<>();
-        Course course=new Course("OfflineCourse",1,"Java Starter Pack","Become zero to Hero in java");
-        listOfCourses.add(course);
+    public CourseService(CourseRepository courseRepository){
+        this.courseRepository=courseRepository;
     }
 
     @Override
     public List<Course> list() {
-        return listOfCourses;
+        return courseRepository.findAll();
     }
 
     @Override
