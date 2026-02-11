@@ -1,11 +1,14 @@
 package org.deepti.repository;
 
 import org.deepti.model.Course;
+import org.springframework.stereotype.Repository;
 
+import java.lang.annotation.Annotation;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CourseRepository implements Repository<Course>{
+@Repository
+public class CourseRepository implements Repo<Course>{
 
     private List<Course> courses;
 

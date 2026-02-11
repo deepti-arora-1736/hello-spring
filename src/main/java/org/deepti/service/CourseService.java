@@ -2,11 +2,14 @@ package org.deepti.service;
 
 import org.deepti.model.Course;
 import org.deepti.repository.CourseRepository;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class CourseService implements CrudService<Course> {
 
     private CourseRepository courseRepository;
